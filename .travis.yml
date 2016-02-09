@@ -1,0 +1,24 @@
+language: python
+
+python:
+	- "3.5"
+
+compiler: 
+	- gcc
+
+before_install:
+	- sudo apt-get update
+
+install:
+	- sudo apt-get install python-numpy python-scipy python-skimage python-pywt
+
+before_script:
+	- git clone https://github.com/Itseez/opencv.git
+	- cd opencv
+	- mkdir build
+	- cd build
+	- cmake ..
+	- make -j4
+	- sudo make -j4 install
+
+script: python run.py

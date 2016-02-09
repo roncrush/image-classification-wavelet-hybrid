@@ -22,7 +22,7 @@ install:
 - conda install -c https://conda.anaconda.org/dgursoy pywavelets
 - conda config --add channels dgursoy
 - conda info -a
-- conda create -q -n --yes test-environment python=$TRAVIS_PYTHON_VERSION numpy scipy scikit-image opencv pywt 
+- conda create -q -n --yes test-environment python=$TRAVIS_PYTHON_VERSION numpy scipy scikit-image opencv pywavelets 
 - source activate test-environment
 - python setup.py install
 

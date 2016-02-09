@@ -10,15 +10,23 @@ before_install:
 - sudo apt-get update
 
 install:
-- sudo apt-get install python-numpy python-scipy python-skimage python-pywt
+- pip install numpy
+- pip install scipy
+- pip install skimage
+- pip install pywt
 
 before_script:
 - git clone https://github.com/Itseez/opencv.git
 - cd opencv
+- git checkout 3.1.0
 - mkdir build
 - cd build
-- cmake ..
+- cmake -D INSTALL_C_EXAMPLES=OFF ..
 - make -j4
 - sudo make -j4 install
+- cd ~/.virtualenvs/cv/lib/python3.5/site-packages/
+- cd /home/travis/virtualenv/python3.5.0/lib/python3.5/site-packages
+- ls /usr/local/lib/python3.5/site-packages/
+- ln -s /usr/local/lib/python3.5/site-packages/cv2.cpython-35m.so cv2.so
 
 script: python run.py

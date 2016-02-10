@@ -20,7 +20,7 @@ install:
 - conda install --yes scikit-image
 - conda install -c https://conda.anaconda.org/memex opencv
 - conda install -c https://conda.anaconda.org/dgursoy pywavelets
-- conda config --add channels memex
+- conda config --add channels dgursoy
 - conda info -a
 - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION numpy scipy scikit-image opencv pywavelets -y
 - source activate test-environment

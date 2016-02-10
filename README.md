@@ -1,0 +1,2 @@
+<h2>Hybrid Wavelet Texture Classification</h2>
+[![Build Status](https://travis-ci.org/roncrush/image-classification-wavelet-hybrid.svg?branch=master)](https://travis-ci.org/roncrush/image-classification-wavelet-hybrid)
